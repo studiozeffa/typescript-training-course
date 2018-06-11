@@ -1,0 +1,31 @@
+{
+  "name": "typescript-training-course",
+  "version": "1.0.0",
+  "description": "A set of training materials to learn how to build apps using TypeScript.",
+  "scripts": {
+    "slides:01": "remarker -s notes/01-esnext.md",
+    "slides:02": "remarker -s notes/02-testing.md",
+    "slides:03": "remarker -s notes/03-basics.md",
+    "slides:04": "remarker -s notes/04-interfaces-functions.md",
+    "slides:05": "remarker -s notes/05-classes.md",
+    "slides:06": "remarker -s notes/06-advanced-types.md",
+    "slides:07": "remarker -s notes/07-generics-decorators.md",
+    "slides:08": "remarker -s notes/08-config-libraries.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiozeffa/typescript-training-course.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Tom Spencer <tom.spencer@studiozeffa.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/studiozeffa/typescript-training-course/issues"
+  },
+  "homepage": "https://github.com/studiozeffa/typescript-training-course#readme",
+  "devDependencies": {
+    "remarker": "studiozeffa/remarker"
+  }
+}
