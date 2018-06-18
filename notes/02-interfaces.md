@@ -56,6 +56,87 @@ x.code = 200; // Compiler error since property is readonly
 
 <!-- break -->
 
+## Enhanced Objects
+
+- If the property name and variable are the same,
+objects can now be created using shorthand notation.
+
+``` js
+const data = 'some data';
+
+const obj = { data };   // Equivalent to `{ data: data }`
+
+console.log(obj.data);  // 'some data'
+```
+
+<!-- break -->
+
+## Destructuring
+
+- Properties can be extracted from objects and assigned to regular variables via a technique known as destructuring.
+
+``` js
+const obj = {
+  firstname: 'John',
+  lastname: 'Smith',
+  age: 66
+};
+
+const { firstname, lastname } = obj;
+
+console.log(firstname); // => 'John'
+console.log(lastname);  // => 'Smith'
+```
+
+<!-- break -->
+
+## Spread operator
+
+- Spreads the elements of an array or object.
+
+``` js
+const list1 = ['apples', 'bananas'];
+const list2 = ['cereal', 'dog food'];
+
+const combo = [...list1, ...list2];
+console.log(combo); // => [ apples, bananas, cereal, dog food]
+```
+
+``` js
+const defaults = { fontSize: 12, darkMode: true };
+const custom = { fontSize: 16 };
+
+const config = {
+  ...defaults,
+  ...custom   // Overwrites any same-named from `defaults`
+};
+// => { fontSize: 16, darkMode: true }
+```
+
+<!-- break -->
+
+# Arrow Functions
+
+- Function definition which preserves the value of `this` (known as _lexical scoping_).
+
+``` js
+const bathales = {
+  beers: ['Gem', 'Wild Hare', 'Barnsey'],
+  bottle: function(beer) {
+    console.log(`bottling ${beer}...`);
+  },
+  bottleAll: function() {
+    this.beers.forEach(beer => {
+      this.bottle(beer);    // Value of `this` is preserved.
+    });
+  }
+}
+
+bathales.bottleAll();
+```
+
+<!-- break -->
+
 # Interfaces
 
 - To reuse an object literal type, we can create an `interface`:

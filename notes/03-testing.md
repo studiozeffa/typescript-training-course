@@ -169,8 +169,3 @@ describe('fetchData', () => {
 - [An Overview of JavaScript Testing in 2018](https://medium.com/welldone-software/an-overview-of-javascript-testing-in-2018-f68950900bc3)
 - [User Interface Testing with Jest and Puppeteer](https://www.valentinog.com/blog/ui-testing-jest-puppetteer/)
 - [Just Say No to More End-to-End Tests](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)
-
-## Challenges
-
-- We'll now take a break from learning new concepts and work through a set of challenges.
-- The challenges for this course are housed in a different repository, [find it here](https://github.com/studiozeffa/typescript-training-challenges) and run through the instructions in the README file.

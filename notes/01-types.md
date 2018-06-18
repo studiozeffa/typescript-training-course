@@ -1,6 +1,6 @@
 # TypeScript Introduction
 
-- TypeScript adds static types to JavaScript.
+- TypeScript adds new features and static types to JavaScript.
 - It compiles down to JavaScript that can run in a variety of different target environments.
 - It also supports definition files, allowing types to be added to existing libraries without needing to modify the libraries themselves.
 - It is built and maintained by a team at Microsoft.
@@ -26,6 +26,45 @@
 - v3 is expected in July 2018, which (amongst other things) brings a new type `unknown` to the language.
 
 <!-- break -->
+
+## `let` / `const`
+
+- Brought in to replace `var`, due to confusing scoping rules.
+- `let` allows changing after assignment, `const` is for constants.
+- Both correctly scope to _blocks_, unlike `var`. For example:
+
+``` js
+var a = 'bob';
+let b = 'bruce';
+
+if (1 < 2) {
+  var a = 'jim';
+  let b = 'jack';
+  console.log(a);  // 'jim'
+  console.log(b);  // 'jack'
+}
+
+console.log(a);  // 'jim' ... ;(
+console.log(b);  // 'bruce' ... :)
+```
+
+<!-- break -->
+
+## Template Strings
+
+- An improvement to regular single/double quoted strings.
+- Features: string interpolation, newlines and more.
+
+``` js
+const str = `I am a string`;
+
+const multiline = `I am a string...
+                   on multiple lines!`
+
+const food = 'pizza';
+
+const like = `I like ${food}`;
+```
 
 ## Typing
 
@@ -187,8 +226,35 @@ msg = 7;            // Compiler error
 
 <!-- break -->
 
+
+
+<!-- break -->
+
+## Modules
+
+- Export JavaScript variables and functions, and import them in other files.
+
+``` js
+// utils.js
+export function add(x, y) {
+  return x + y;
+}
+export function subtract(x, y) {
+  return x - y;
+}
+
+// app.js
+import { add, subtract } from './utils';
+add(2, 3);       // => 5
+subtract(3, 2);  // => 1
+```
+
+<!-- break -->
+
 ## Further Reading
 
+- [TypeScript Handbook: Variable Declaration](https://www.typescriptlang.org/docs/handbook/variable-declarations.html)
 - [TypeScript Handbook: Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [TypeScript Handbook: Enums](https://www.typescriptlang.org/docs/handbook/enums.html)
 - [TypeScript Handbook: Type Inference](https://www.typescriptlang.org/docs/handbook/type-inference.html)
+- [TypeScript Handbook: Modules](https://www.typescriptlang.org/docs/handbook/modules.html)

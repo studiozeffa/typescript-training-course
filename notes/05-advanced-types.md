@@ -114,7 +114,7 @@ function takeOrder(order: Order): string {
 
 ## Index types
 
-- Useful when referring to objects by their key, e.g. in a 'pick' operation.
+- Useful when referring to objects by their key, e.g. in a 'pluck' operation.
 
 ``` ts
 interface Response {

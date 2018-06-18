@@ -1,4 +1,88 @@
+# Promises
+
+- A promise represents a value or error that will occur in the future.
+- In many cases, they are a better async alternative to callbacks.
+- You can create a promise with `new Promise()`.
+- The promise constructor is passed two functions, `resolve` and `reject`. Call these to resolve or reject the promise at any time.
+
+``` js
+const p = new Promise(resolve => {
+  setTimeout(() => resolve('hello'), 200);
+});
+
+p.then(msg => console.log(msg));  // Logged after 200ms
+```
+
+<!-- break -->
+
+# Async/await
+
+- Make async code behave as though it is synchronous.
+- `await` an async operation: calling function only continues when async operation has completed.
+- Can use try/catch with async code.
+
+``` js
+const sayHello = () => new Promise(resolve => {
+  setTimeout(() => resolve('hello'), 200);
+});
+
+const waitToSayHello = async function() {
+  await sayHello();
+  return 'done';
+}
+
+const response = waitToSayHello();  // Sets `response` after 200ms
+console.log(response); // => `done`
+```
+<!-- break -->
+
 # Classes
+
+- Syntactic sugar for OO prototypes.
+- Features: inheritance, super calls, constructors, instance methods, statics, getters/setters.
+
+``` js
+class Animal {
+  speak() {
+    console.log('I have no voice.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log('woof.');
+  }
+}
+```
+
+<!-- break -->
+
+``` js
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+    this.legs = 4;
+  }
+  get legs() {
+    return this._legs;
+  }
+  set legs(val) {
+    this._legs = val;
+    console.log(`I have ${val} legs`);
+  }
+  static family() {
+    return 'Canis';
+  }
+}
+
+const dog = new Dog('Boris');
+console.log(dog.legs);      // => '4'
+console.log(Dog.family());  // => 'Canis'
+```
+
+<!-- break -->
+
+## Typing Classes
 
 - Properties and methods in classes can be type annotated:
 
