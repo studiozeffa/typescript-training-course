@@ -206,7 +206,7 @@ let x: Response = {
 interface Response {
   code: number,
   message?: string,
-  refetch: () => Promise<Response>
+  refetch: () => void
 }
 
 let x: Response = {
@@ -216,7 +216,7 @@ let x: Response = {
 };
 ```
 
-- In the above example, `refetch` is a function which returns a Promise.
+- In the above example, `refetch` is a function which returns nothing.
 
 <!-- break -->
 
@@ -226,7 +226,7 @@ let x: Response = {
 
 ``` ts
 interface Fetcher {
-  (url: string) => Promise<Response>
+  (url: string) => void
 };
 
 const fetcher: Fetcher = (url) => fetch(url);

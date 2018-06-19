@@ -66,6 +66,8 @@ const food = 'pizza';
 const like = `I like ${food}`;
 ```
 
+<!-- break -->
+
 ## Typing
 
 - Add a type to a variable, argument or function using a colon `:`.
@@ -226,24 +228,20 @@ msg = 7;            // Compiler error
 
 <!-- break -->
 
-
-
-<!-- break -->
-
 ## Modules
 
 - Export JavaScript variables and functions, and import them in other files.
 
-``` js
-// utils.js
-export function add(x, y) {
+``` ts
+// utils.ts
+export function add(x: number, y: number): number {
   return x + y;
 }
-export function subtract(x, y) {
+export function subtract(x: number, y: number): number {
   return x - y;
 }
 
-// app.js
+// app.ts
 import { add, subtract } from './utils';
 add(2, 3);       // => 5
 subtract(3, 2);  // => 1

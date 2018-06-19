@@ -1,5 +1,3 @@
-# Advanced Types
-
 ## Intersection Types
 
 - An intersection type merges multiple types into one.

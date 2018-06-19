@@ -23,16 +23,13 @@ p.then(msg => console.log(msg));  // Logged after 200ms
 
 ``` js
 const sayHello = () => new Promise(resolve => {
-  setTimeout(() => resolve('hello'), 200);
+  setTimeout(() => resolve('hello'), 500);
 });
-
 const waitToSayHello = async function() {
-  await sayHello();
-  return 'done';
+  const resp = await sayHello();
+  console.log(resp);  // 'hello' after 500ms
 }
-
-const response = waitToSayHello();  // Sets `response` after 200ms
-console.log(response); // => `done`
+waitToSayHello();
 ```
 <!-- break -->
 
@@ -111,7 +108,7 @@ supercar.drive('100');  // Compile error, speed must be a number
 - TypeScript allows class properties and methods to be set to `public`, `private` or `protected`:
   - `public`: any calling code can access this property / call this method. This is the default visibility if no modifier is used.
   - `private`: only methods within the same class can access this property / call this method.
-  - `proptected`: only methods within the same class or a subclass can access this property / call this method.
+  - `protected`: only methods within the same class or a subclass can access this property / call this method.
 - Remember that JavaScript does not currently implement visibility modifiers, so this is enforced at _compile-time_ only by TypeScript.
 
 <!-- break -->
@@ -218,7 +215,7 @@ let x: Response = {
 interface IResponse {
   code: number,
   message?: string,
-  refetch: () => Promise<Response>
+  refetch: () => Promise<IResponse>
 };
 
 class Response implements IResponse {
