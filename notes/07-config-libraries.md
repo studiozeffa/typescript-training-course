@@ -32,9 +32,9 @@
   "checkJs": true,  // Useful when migrating a codebase to TS.
   "experimentalDecorators": true, // Enable decorator support.
   "module": "commonjs",   // Generate modules as CommonJS.
-  "noImplicitAny": true,  // Require everything to be typed.
   "outFile": "path/to/app.js",  // Compiler output destination.
-  "sourceMap": true,  // Output sourcemap file with compiled code.
+  "noImplicitAny": true,  // Require everything to be typed.
+  "sourceMap": true,  // Output sourcemap with compiled code.
   "strictNullChecks": true  // Enforce `string | null` typing.
 }
 ```
