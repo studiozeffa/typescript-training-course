@@ -4,7 +4,7 @@
 - When building an app with TypeScript, use a config file.
 - A config file should resemble the following:
 
-``` json
+``` js
 {
   "compilerOptions": {
     // ...sets compiler options, see below.
@@ -26,7 +26,7 @@
 - Many options: [see here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) for a full reference.
 - Commonly used options:
 
-``` json
+``` js
 {
   "allowJs": true,  // Enables (limited) typechecking in js files.
   "checkJs": true,  // Useful when migrating a codebase to TS.
@@ -45,7 +45,7 @@
 
 - Use the `extends` property to extend from another config file:
 
-``` json
+``` js
 // tsconfig.json
 {
   "compilerOptions": {

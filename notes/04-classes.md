@@ -167,16 +167,29 @@ supercar.model = 'porsche';           // Compile error
 
 <!-- break -->
 
+## Parameter properties
+
+- Setting an instance property on a class from an argument passed to the constructor is a common pattern.
+- TypeScript provides a shorthand way of achieving this - by annotating a constructor argument with a visibility modifier, the argument is automatically set as an instance property on the class.
+
+``` ts
+class Car {
+  constructor(public model: string) {}
+}
+
+let supercar = new Car('ferrari');
+console.log(supercar.model);  // => 'ferrari'
+```
+
+<!-- break -->
+
 ## Abstract classes
 
 - TypeScript provides the `abstract` keyword to author a class which cannot be directly instantiated, only subclassed.
 
 ``` ts
 abstract class Car {
-  model: string;
-  constructor(model: string) {
-    this.model = model;
-  }
+  constructor(public model: string) {}
 }
 class Ferrari extends Car {
   constructor() {
@@ -219,10 +232,8 @@ interface IResponse {
 };
 
 class Response implements IResponse {
-  constructor(code: number, message?: string) {
-    this.code = code;
-    this.message = message;
-  }
+  constructor(private code: number, private message?: string) {}
+
   refetch() {
     return Promise.resolve(new Response(200, 'OK'));
   }

@@ -101,7 +101,7 @@ describe('isAM', () => {
 ## How to write an integration test
 
 - Try to stub out any external dependencies wherever possible, to speed up your tests and improve their reliability.
-- For example, if the test involves fetching data from an HTTP endpoint, consider mocking the endpoint and responsing with pre-canned data to compare against.
+- For example, if the test involves fetching data from an HTTP endpoint, consider mocking the endpoint and responding with pre-canned data to compare against.
 - Where this isn't possible (e.g. calling a database), try to use a local version of the dependency wherever possible, and spin it up specifically for the purposes of the test runner. This will help to minimise downtime issues.
 
 <!-- break -->
